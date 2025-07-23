@@ -1,0 +1,446 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column; /* Allow vertical stacking */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  color: #212121;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.app-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container, .home-container {
+  background-color: #ffffff;
+  padding: 24px 24px 32px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2), 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12);
+  text-align: center;
+  position: relative; 
+  z-index: 1;
+  width: 100%;
+}
+
+.home-container {
+    max-width: none;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #212121;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #333;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.input-group label.required::after {
+  content: " *";
+  color: #b00020;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-sizing: border-box;
+  color: #212121;
+  font-family: 'Roboto', sans-serif;
+}
+
+.input-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.input-helper-text {
+  display: block;
+  font-size: 0.8rem;
+  color: #5f6368;
+  margin-top: 4px;
+}
+
+.input-error-text {
+  display: block;
+  font-size: 0.8rem;
+  color: #b00020;
+  margin-top: 4px;
+}
+
+.input-group select:required:invalid {
+  color: #757575;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  border-color: #6200ee;
+  box-shadow: 0 0 0 2px rgba(98, 0, 238, 0.2);
+}
+
+.input-group input[aria-invalid="true"] {
+  border-color: #b00020;
+}
+
+.input-group input[aria-invalid="true"]:focus {
+  border-color: #b00020;
+  box-shadow: 0 0 0 2px rgba(176, 0, 32, 0.2);
+}
+
+button {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background-color 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  overflow: hidden;
+  position: relative;
+}
+
+button.button-primary {
+  background-color: #6200ee;
+  color: white;
+}
+
+button.button-primary:hover {
+  background-color: #3700b3;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+button.button-secondary {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #6200ee;
+  font-weight: 500;
+  box-shadow: none;
+  border: 1px solid #e0e0e0;
+}
+
+button.button-secondary:hover {
+  background-color: rgba(98, 0, 238, 0.04);
+  border-color: #c7c7c7;
+}
+
+.error-message {
+  color: #b00020;
+  background-color: #fce4e4;
+  border: 1px solid #b00020;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.switch-view {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.switch-view button {
+  background: none;
+  border: none;
+  color: #6200ee;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline;
+  width: auto;
+  box-shadow: none;
+  text-transform: uppercase;
+}
+
+.switch-view button:hover {
+  background-color: rgba(98, 0, 238, 0.08);
+}
+
+.home-container p {
+  font-size: 1.1rem;
+}
+
+.username-display {
+  margin-top: -8px;
+  margin-bottom: 16px;
+  color: #757575;
+  font-size: 1rem;
+}
+
+.role {
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 16px;
+  color: white;
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.role.admin {
+  background-color: #00897b; /* Teal */
+}
+
+.role.user {
+  background-color: #546e7a; /* Blue Grey */
+}
+
+.user-details {
+  text-align: left;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #fafafa;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+}
+
+.user-details p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.user-details strong {
+  color: #424242;
+}
+
+.admin-panel {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.user-table th, .user-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.user-table th {
+    background-color: #6200ee;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.user-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.user-table tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+}
+
+.user-table tbody tr:last-of-type {
+    border-bottom: 2px solid #6200ee;
+}
+
+.user-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+.action-buttons button {
+    width: auto;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+}
+
+.action-buttons .button-edit {
+    background-color: #1e88e5; /* Blue */
+    color: white;
+}
+.action-buttons .button-edit:hover {
+    background-color: #1565c0;
+}
+
+.action-buttons .button-delete {
+    background-color: #e53935; /* Red */
+    color: white;
+}
+.action-buttons .button-delete:hover {
+    background-color: #c62828;
+}
+
+.home-container button.button-danger {
+  margin-top: 1.5rem;
+  background-color: #e53935;
+  color: white;
+  display: inline-block;
+  width: auto;
+}
+
+.home-container button.button-danger:hover {
+    background-color: #c62828;
+}
+
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.modal-actions button {
+    width: auto;
+    margin-top: 0;
+}
+
+/* Password visibility toggle styles */
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input-wrapper input {
+    padding-right: 90px; /* Space for the toggle button */
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #5f6368;
+    
+    /* Reset general button styles */
+    width: auto;
+    box-shadow: none;
+    text-transform: none;
+    transition: color 0.2s;
+}
+
+.password-toggle-btn:hover {
+    color: #6200ee;
+    background-color: transparent;
+}
+
+/* Login Page Header */
+.login-page-header {
+  color: #d32f2f; /* Red */
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .login-page-header {
+    font-size: 1.5rem;
+  }
+}
